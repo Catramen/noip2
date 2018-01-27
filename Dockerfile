@@ -10,9 +10,10 @@ RUN cd /usr/local/src/ \
   && cp noip2 /usr/local/bin/
 
 VOLUME /usr/local/etc
-# Define working directory.
-WORKDIR /
 
+COPY . /usr/local/bin
+# Define working directory.
+WORKDIR /usr/local/bin
 
 # Define default command.
-CMD noip2 && bash
+CMD init.sh
